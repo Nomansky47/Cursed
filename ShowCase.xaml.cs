@@ -22,7 +22,7 @@ namespace Cursed
         public ShowCase()
         {
             InitializeComponent();
-            Dgrid.ItemsSource=AirEntities.GetContext().Passengers.ToList();
+            Dgrid.ItemsSource=AirEntities.GetContext().Aircrafts.ToList();
         }
         private void EditClick(object sender, RoutedEventArgs e)
         {
