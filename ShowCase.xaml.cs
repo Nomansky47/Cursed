@@ -17,16 +17,32 @@ namespace Cursed
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class ShowCase : Window
+    public partial class ShowCase : Page
     {
         public ShowCase()
         {
             InitializeComponent();
-            Dgrid.ItemsSource=AirEntities.GetContext().Aircrafts.ToList();
         }
         private void EditClick(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("i forgor -_-");
+        }
+        public void AddClick(object sender, RoutedEventArgs e)
+        {
+            Navigator.MainFrame.Navigate(new EditPage());
+        }
+        private void DelClick(object sender, RoutedEventArgs e) 
+        {
+            MessageBox.Show("i forgor -_-");
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility==Visibility.Visible) 
+            {
+                AirEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                MyGrid.ItemsSource = AirEntities.GetContext().Aircrafts.ToList();
+            }
         }
     }
 }

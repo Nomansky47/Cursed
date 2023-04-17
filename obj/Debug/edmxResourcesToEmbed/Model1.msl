@@ -14,6 +14,8 @@
       <EntityTypeMapping TypeName="AirModel.Aircrafts">
         <MappingFragment StoreEntitySet="Aircrafts">
           <ScalarProperty Name="AircraftID" ColumnName="AircraftID" />
+          <ScalarProperty Name="PlaneType" ColumnName="PlaneType" />
+          <ScalarProperty Name="NumberOfSeats" ColumnName="NumberOfSeats" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -41,7 +43,8 @@
     <EntitySetMapping Name="Passengers">
       <EntityTypeMapping TypeName="AirModel.Passengers">
         <MappingFragment StoreEntitySet="Passengers">
-          <ScalarProperty Name="PassengerID" ColumnName="PassengerID" />
+          <ScalarProperty Name="Userlogin" ColumnName="Userlogin" />
+          <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="Surname" ColumnName="Surname" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Patronimyc" ColumnName="Patronimyc" />
@@ -64,19 +67,11 @@
         <MappingFragment StoreEntitySet="Tickets">
           <ScalarProperty Name="TicketID" ColumnName="TicketID" />
           <ScalarProperty Name="FlightID" ColumnName="FlightID" />
-          <ScalarProperty Name="PassengerID" ColumnName="PassengerID" />
+          <ScalarProperty Name="Userlogin" ColumnName="Userlogin" />
           <ScalarProperty Name="Row" ColumnName="Row" />
           <ScalarProperty Name="Seat" ColumnName="Seat" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Departure_Time" ColumnName="Departure_Time" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="AirModel.Users">
-        <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="Login" ColumnName="Login" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

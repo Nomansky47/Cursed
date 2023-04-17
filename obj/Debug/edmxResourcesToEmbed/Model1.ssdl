@@ -15,6 +15,8 @@
       <PropertyRef Name="AircraftID" />
     </Key>
     <Property Name="AircraftID" Type="int" Nullable="false" />
+    <Property Name="PlaneType" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NumberOfSeats" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Airports">
     <Key>
@@ -37,9 +39,10 @@
   </EntityType>
   <EntityType Name="Passengers">
     <Key>
-      <PropertyRef Name="PassengerID" />
+      <PropertyRef Name="Userlogin" />
     </Key>
-    <Property Name="PassengerID" Type="int" Nullable="false" />
+    <Property Name="Userlogin" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Surname" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Patronimyc" Type="varchar" MaxLength="255" Nullable="false" />
@@ -60,19 +63,11 @@
     </Key>
     <Property Name="TicketID" Type="int" Nullable="false" />
     <Property Name="FlightID" Type="int" Nullable="false" />
-    <Property Name="PassengerID" Type="int" Nullable="false" />
+    <Property Name="Userlogin" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Row" Type="int" Nullable="false" />
     <Property Name="Seat" Type="int" Nullable="false" />
     <Property Name="Price" Type="int" Nullable="false" />
     <Property Name="Departure_Time" Type="time" Precision="7" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="Login" />
-      <PropertyRef Name="Password" />
-    </Key>
-    <Property Name="Login" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <Association Name="FK_Aircraft_Cabins_Aircrafts">
     <End Role="Aircrafts" Type="Self.Aircrafts" Multiplicity="1" />
@@ -127,10 +122,10 @@
     <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Passengers">
-        <PropertyRef Name="PassengerID" />
+        <PropertyRef Name="Userlogin" />
       </Principal>
       <Dependent Role="Tickets">
-        <PropertyRef Name="PassengerID" />
+        <PropertyRef Name="Userlogin" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -142,7 +137,6 @@
     <EntitySet Name="Passengers" EntityType="Self.Passengers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Aircraft_Cabins_Aircrafts" Association="Self.FK_Aircraft_Cabins_Aircrafts">
       <End Role="Aircrafts" EntitySet="Aircrafts" />
       <End Role="Aircraft_Cabins" EntitySet="Aircraft_Cabins" />

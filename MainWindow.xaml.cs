@@ -20,17 +20,25 @@ namespace Cursed
         public MainWindow()
         {
             InitializeComponent();
+            Navigator.MainFrame = MyFrame;
+            MyFrame.Navigate(new Registration());
         }
 
-        private void Enter(object sender, RoutedEventArgs e)
+        private void GoBack(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("i forgor -_-");
+            Navigator.MainFrame.GoBack();
         }
-        private void Registration(object sender, RoutedEventArgs e)
+
+        private void MyFrame_ContentRendered(object sender, EventArgs e)
         {
-            
-            ShowCase show = new ShowCase();
-            show.Show();
+            if (MyFrame.CanGoBack) 
+            {
+                BackButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BackButton.Visibility = Visibility.Hidden;
+            }    
         }
-        }
+    }
 }

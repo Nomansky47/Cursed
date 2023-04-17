@@ -7,10 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="Gray">
     <Grid>
-        <TextBox Background="LightGray" HorizontalAlignment="Left" Height="46" Margin="182,244,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="328" x:Name="Password"/>
-        <TextBox Background="LightGray" HorizontalAlignment="Left" Height="46" Margin="182,153,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="328" x:Name="Login"/>
-        <Button Background="LightGray" Content="Вход" HorizontalAlignment="Left" Height="46" Margin="543,244,0,0" VerticalAlignment="Top" Width="73" Click="Enter"/>
-        <Button Background="LightGray" Content="Регистрация&#xD;&#xA;" HorizontalAlignment="Left" Height="46" Margin="543,153,0,0" VerticalAlignment="Top" Width="73" Click="Registration"/>
-        <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Height="60" Margin="0,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434"><Run Language="ru-ru" Text="Авторизация"/></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Resources/cube.jpg" HorizontalAlignment="Left"></Image>
+        <TextBlock Text="Заголовок" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Grid Background="LightGray" Panel.ZIndex="-2"></Grid>
+        <Grid Grid.Row="2" Background="LightGray"></Grid>
+        <Frame NavigationUIVisibility="Hidden" ContentRendered="MyFrame_ContentRendered"  Grid.Row="1" x:Name="MyFrame"></Frame>
+        <Button Click="GoBack" x:Name="BackButton" Content="Назад" Width="175" Height="30" HorizontalAlignment="Right" Margin="5"></Button>
     </Grid>
 </Window>

@@ -16,6 +16,8 @@
       <PropertyRef Name="AircraftID" />
     </Key>
     <Property Name="AircraftID" Type="Int32" Nullable="false" />
+    <Property Name="PlaneType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumberOfSeats" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Aircraft_Cabins" Relationship="Self.FK_Aircraft_Cabins_Aircrafts" FromRole="Aircrafts" ToRole="Aircraft_Cabins" />
     <NavigationProperty Name="Flights" Relationship="Self.FK_Flights_Aircrafts" FromRole="Aircrafts" ToRole="Flights" />
   </EntityType>
@@ -44,9 +46,10 @@
   </EntityType>
   <EntityType Name="Passengers">
     <Key>
-      <PropertyRef Name="PassengerID" />
+      <PropertyRef Name="Userlogin" />
     </Key>
-    <Property Name="PassengerID" Type="Int32" Nullable="false" />
+    <Property Name="Userlogin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Patronimyc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
@@ -68,21 +71,13 @@
     </Key>
     <Property Name="TicketID" Type="Int32" Nullable="false" />
     <Property Name="FlightID" Type="Int32" Nullable="false" />
-    <Property Name="PassengerID" Type="Int32" Nullable="false" />
+    <Property Name="Userlogin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Row" Type="Int32" Nullable="false" />
     <Property Name="Seat" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Int32" Nullable="false" />
     <Property Name="Departure_Time" Type="Time" Nullable="false" Precision="7" />
     <NavigationProperty Name="Flights" Relationship="Self.FK_Tickets_Flights" FromRole="Tickets" ToRole="Flights" />
     <NavigationProperty Name="Passengers" Relationship="Self.FK_Tickets_Passengers" FromRole="Tickets" ToRole="Passengers" />
-  </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="Login" />
-      <PropertyRef Name="Password" />
-    </Key>
-    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <Association Name="FK_Aircraft_Cabins_Aircrafts">
     <End Role="Aircrafts" Type="Self.Aircrafts" Multiplicity="1" />
@@ -137,10 +132,10 @@
     <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Passengers">
-        <PropertyRef Name="PassengerID" />
+        <PropertyRef Name="Userlogin" />
       </Principal>
       <Dependent Role="Tickets">
-        <PropertyRef Name="PassengerID" />
+        <PropertyRef Name="Userlogin" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -152,7 +147,6 @@
     <EntitySet Name="Passengers" EntityType="Self.Passengers" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Tickets" EntityType="Self.Tickets" />
-    <EntitySet Name="Users" EntityType="Self.Users" />
     <AssociationSet Name="FK_Aircraft_Cabins_Aircrafts" Association="Self.FK_Aircraft_Cabins_Aircrafts">
       <End Role="Aircrafts" EntitySet="Aircrafts" />
       <End Role="Aircraft_Cabins" EntitySet="Aircraft_Cabins" />

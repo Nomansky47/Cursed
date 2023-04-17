@@ -19,6 +19,13 @@ namespace Cursed
             : base("name=AirEntities")
         {
         }
+        private static AirEntities _context;
+        public static AirEntities GetContext()
+        {
+            if (_context == null)
+                _context = new AirEntities();
+            return _context;
+        }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
