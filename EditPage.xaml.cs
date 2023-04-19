@@ -18,16 +18,18 @@ namespace Cursed
     public partial class EditPage : Page
     {
         private Aircrafts _currentAircraft = new Aircrafts();
-        public EditPage()
+        public EditPage(Aircrafts selectedAircraft)
         {
             InitializeComponent();
-            Typesamolet.ItemsSource = AirEntities.GetContext().Aircrafts.ToList();
+            if (selectedAircraft != null) 
+                _currentAircraft = selectedAircraft; 
             DataContext = _currentAircraft;
         }
 
         private void Save(object sender, RoutedEventArgs e)
         {
             StringBuilder error=new StringBuilder();
+
             if (int.TryParse(Number.ToString(), out int n))
                 error.AppendLine("Ошибка ввода номера самолета");
             if (string.IsNullOrEmpty(Seats.ToString()) || _currentAircraft.PlaneType == null)
@@ -37,17 +39,16 @@ namespace Cursed
                 MessageBox.Show(error.ToString());
                 return;
             }
-            if (_currentAircraft.AircraftID == 0)
-                AirEntities.GetContext().Aircrafts.Add(_currentAircraft);
             try
             {
+                AirEntities.GetContext().Aircrafts.Add(_currentAircraft);
                 AirEntities.GetContext().SaveChanges();
                 MessageBox.Show("Успешно");
                 Navigator.MainFrame.GoBack();
             }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show(ex.Message.ToString() +" "+ex.GetType()+" "+ ex.StackTrace);
             }
 
             
