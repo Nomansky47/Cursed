@@ -16,22 +16,19 @@ using System.Windows.Shapes;
 namespace Cursed
 {
     /// <summary>
-    /// Логика взаимодействия для Registration.xaml
+    /// Логика взаимодействия для Register.xaml
     /// </summary>
-    public partial class Registration : Page
+    public partial class Register : Page
     {
-        public Registration()
+        public Register()
         {
             InitializeComponent();
         }
-        private void Enter(object sender, RoutedEventArgs e)
-        {
-            Navigator.MainFrame.Navigate(new ShowCase());
-        }
-        private void Register(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("i forgor");
 
+        private void Registration(object sender, RoutedEventArgs e)
+        {
+          //  AirEntities.GetContext().Aircrafts.Add(_currentAircraft);
+           // AirEntities.GetContext().SaveChanges();
         }
     }
 }

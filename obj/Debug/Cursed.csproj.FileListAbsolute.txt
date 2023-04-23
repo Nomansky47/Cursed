@@ -101,10 +101,12 @@ C:\Users\NikitaPortable\source\repos\Cursed\Cursed\bin\Debug\ru\EntityFramework.
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Cursed_Content.g.cs
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\ShowCase.g.cs
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\ShowCase.baml
-C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Registration.g.cs
-C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Registration.baml
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\bin\Debug\PresentationFramework.dll
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\EditPage.g.cs
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\EditPage.baml
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\App.baml
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Register.g.cs
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Authorization.g.cs
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Register.baml
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Authorization.baml
