@@ -37,8 +37,7 @@ namespace Cursed
                 }
                 if(user.UserType=="user")
                 {
-                    MessageBox.Show("Вы пользователь "+user.Name);
-                    
+                    Navigator.MainFrame.Navigate(new ShowRaces());
                 }
                 if (user==null)
                 { 
@@ -52,7 +51,7 @@ namespace Cursed
             { Console.WriteLine("Данные не были введены"); }
             else
             {
-                Navigator.MainFrame.Navigate(new Register());
+                Navigator.MainFrame.Navigate(new Register("user"));
             }
 
         }

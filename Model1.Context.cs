@@ -16,9 +16,10 @@ namespace Cursed
     public partial class AirEntities : DbContext
     {
         public AirEntities()
-               : base("name=AirEntities")
+            : base("name=AirEntities")
         {
         }
+
         private static AirEntities _context;
         public static AirEntities GetContext()
         {

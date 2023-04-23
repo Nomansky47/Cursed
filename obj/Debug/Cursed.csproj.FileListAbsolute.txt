@@ -110,3 +110,5 @@ C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Register.g.cs
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Authorization.g.cs
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Register.baml
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Authorization.baml
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\ShowRaces.g.cs
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\ShowRaces.baml

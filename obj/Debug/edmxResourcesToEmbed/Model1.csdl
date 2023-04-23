@@ -53,7 +53,7 @@
     <Property Name="UserType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Patronimyc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Tickets" Relationship="Self.FK_Tickets_Passengers" FromRole="Passengers" ToRole="Tickets" />
   </EntityType>
   <EntityType Name="sysdiagrams">

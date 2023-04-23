@@ -48,7 +48,7 @@
           <ScalarProperty Name="UserType" ColumnName="UserType" />
           <ScalarProperty Name="Surname" ColumnName="Surname" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Patronimyc" ColumnName="Patronimyc" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

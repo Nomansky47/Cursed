@@ -46,7 +46,7 @@
     <Property Name="UserType" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="Surname" Type="varchar" MaxLength="255" />
     <Property Name="Name" Type="varchar" MaxLength="255" />
-    <Property Name="Patronimyc" Type="varchar" MaxLength="255" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

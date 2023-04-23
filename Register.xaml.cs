@@ -21,8 +21,10 @@ namespace Cursed
     public partial class Register : Page
     {
         private Passengers _currentUser = new Passengers();
-        public Register()
+        private string usertype;
+        public Register(string userttype)
         {
+            usertype = userttype;
             InitializeComponent();
         }
 
@@ -39,6 +41,12 @@ namespace Cursed
             }
             try
             {
+                _currentUser.UserType = usertype;
+                _currentUser.Surname= SecondName.Text.ToString();
+                _currentUser.Name = Nname.Text.ToString();
+                _currentUser.Patronymic=ThirdName.Text.ToString();
+                _currentUser.password= Password.Text.ToString();
+                _currentUser.Userlogin=Login.Text.ToString();
                 AirEntities.GetContext().Passengers.Add(_currentUser);
                 AirEntities.GetContext().SaveChanges();
                 MessageBox.Show("Успешно");
