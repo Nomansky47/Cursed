@@ -45,6 +45,7 @@
         <MappingFragment StoreEntitySet="Passengers">
           <ScalarProperty Name="Userlogin" ColumnName="Userlogin" />
           <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
           <ScalarProperty Name="Surname" ColumnName="Surname" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Patronimyc" ColumnName="Patronimyc" />

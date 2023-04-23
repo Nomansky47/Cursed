@@ -22,6 +22,7 @@ namespace Cursed
     
         public string Userlogin { get; set; }
         public string password { get; set; }
+        public string UserType { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronimyc { get; set; }

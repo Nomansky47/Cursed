@@ -16,7 +16,7 @@ namespace Cursed
     public partial class AirEntities : DbContext
     {
         public AirEntities()
-            : base("name=AirEntities")
+               : base("name=AirEntities")
         {
         }
         private static AirEntities _context;
@@ -26,7 +26,6 @@ namespace Cursed
                 _context = new AirEntities();
             return _context;
         }
-    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

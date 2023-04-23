@@ -30,10 +30,19 @@ namespace Cursed
             { Console.WriteLine("Данные не были введены"); }
             else
             {
-                Passengers user = AirEntities.GetContext().Passengers.FirstOrDefault(p => p.Userlogin == Login.Text && p.password == Password.Text&&p.UserType=="User");
-                if (user!=null)
-                { MessageBox.Show("Вы существуете "+user.Name );
-                  Navigator.MainFrame.Navigate(new ShowCase());
+                Passengers user = AirEntities.GetContext().Passengers.FirstOrDefault(p => p.Userlogin == Login.Text && p.password == Password.Text);
+                if (user.UserType=="admin")
+                { 
+                    Navigator.MainFrame.Navigate(new ShowCase());
+                }
+                if(user.UserType=="user")
+                {
+                    MessageBox.Show("Вы пользователь "+user.Name);
+                    
+                }
+                if (user==null)
+                { 
+                    MessageBox.Show("Вы не существуете( ");
                 }
             }
         }

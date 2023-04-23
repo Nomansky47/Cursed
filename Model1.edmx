@@ -48,9 +48,10 @@
           </Key>
           <Property Name="Userlogin" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Surname" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Patronimyc" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="UserType" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Surname" Type="varchar" MaxLength="255" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Patronimyc" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -218,9 +219,10 @@
           </Key>
           <Property Name="Userlogin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Patronimyc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Patronimyc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Tickets" Relationship="Self.FK_Tickets_Passengers" FromRole="Passengers" ToRole="Tickets" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -386,6 +388,7 @@
               <MappingFragment StoreEntitySet="Passengers">
                 <ScalarProperty Name="Userlogin" ColumnName="Userlogin" />
                 <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Patronimyc" ColumnName="Patronimyc" />

@@ -20,6 +20,7 @@ namespace Cursed
     /// </summary>
     public partial class Register : Page
     {
+        private Passengers _currentUser = new Passengers();
         public Register()
         {
             InitializeComponent();
@@ -27,8 +28,27 @@ namespace Cursed
 
         private void Registration(object sender, RoutedEventArgs e)
         {
-          //  AirEntities.GetContext().Aircrafts.Add(_currentAircraft);
-           // AirEntities.GetContext().SaveChanges();
+            StringBuilder error = new StringBuilder();
+
+            if (string.IsNullOrEmpty(Nname.ToString()) || string.IsNullOrEmpty(SecondName.ToString())|| string.IsNullOrEmpty(ThirdName.ToString())|| string.IsNullOrEmpty(Password.ToString())|| string.IsNullOrEmpty(Login.ToString()))
+                error.AppendLine("Ошибка ввода, данные не были введены");
+            if (error.Length > 0)
+            {
+                MessageBox.Show(error.ToString());
+                return;
+            }
+            try
+            {
+                AirEntities.GetContext().Passengers.Add(_currentUser);
+                AirEntities.GetContext().SaveChanges();
+                MessageBox.Show("Успешно");
+                Navigator.MainFrame.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString() + " " + ex.GetType() + " " + ex.StackTrace);
+            }
+          
         }
     }
 }
