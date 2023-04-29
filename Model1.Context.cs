@@ -19,7 +19,6 @@ namespace Cursed
             : base("name=AirEntities")
         {
         }
-
         private static AirEntities _context;
         public static AirEntities GetContext()
         {
@@ -27,6 +26,7 @@ namespace Cursed
                 _context = new AirEntities();
             return _context;
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

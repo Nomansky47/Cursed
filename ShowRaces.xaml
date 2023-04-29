@@ -9,15 +9,22 @@
       Title="ShowRaces"  IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
-        <DataGrid x:Name="RaceGrid" AutoGenerateColumns="False" IsReadOnly="False">
+        <DataGrid x:Name="RaceGrid" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Дата" Binding="{Binding FlightID}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Аиропорт" Binding="{Binding AirportID}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Тип самолета" Binding="{Binding AircraftID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Аэропорт" Binding="{Binding Airports.AirportName}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип самолета" Binding="{Binding Aircrafts.PlaneType}" ></DataGridTextColumn>
                 <DataGridTextColumn Header="Путь" Binding="{Binding Destination}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Депарчт тайм" Binding="{Binding Departure_Time}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Время прибытия" Binding="{Binding Arrival_Time}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Время вылета" Binding="{Binding Departure_Time}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Время прилета" Binding="{Binding Arrival_Time}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Click="Buy" Content="Купить билет" Margin="5" Width="90" Height="30" VerticalAlignment="Center" Background="Aqua">
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

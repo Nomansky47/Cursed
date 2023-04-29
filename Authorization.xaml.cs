@@ -31,17 +31,21 @@ namespace Cursed
             else
             {
                 Passengers user = AirEntities.GetContext().Passengers.FirstOrDefault(p => p.Userlogin == Login.Text && p.password == Password.Text);
+                if (user == null)
+                {
+                    MessageBox.Show("Неправильно введены данные или пользователя не существует");
+                }
+                else
+                { 
                 if (user.UserType=="admin")
                 { 
                     Navigator.MainFrame.Navigate(new ShowCase());
                 }
                 if(user.UserType=="user")
                 {
+                    Navigator.login=Login.Text;
                     Navigator.MainFrame.Navigate(new ShowRaces());
                 }
-                if (user==null)
-                { 
-                    MessageBox.Show("Вы не существуете( ");
                 }
             }
         }

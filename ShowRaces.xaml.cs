@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,15 +24,23 @@ namespace Cursed
         public ShowRaces()
         {
             InitializeComponent();
+
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (Visibility == Visibility.Visible)
-            {
+            {  
                 AirEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                RaceGrid.ItemsSource = AirEntities.GetContext().Flights.ToList();
+                RaceGrid.ItemsSource = AirEntities.GetContext().Flights.ToList(); 
             }
+        }
+
+        private void Buy(object sender, RoutedEventArgs e)
+        {
+           // MessageBox.Show("Не готово");
+           // Navigator.MainFrame.Navigate(new TicketPage((sender as Button).DataContext as Aircrafts));
+           Navigator.MainFrame.Navigate(new PlanePage((sender as Button).DataContext as Flights));  
         }
     }
 }

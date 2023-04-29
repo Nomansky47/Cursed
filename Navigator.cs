@@ -9,6 +9,7 @@ namespace Cursed
 {
     internal class Navigator
     {
-        public static Frame MainFrame { get; set; } 
+        public static Frame MainFrame { get; set; }
+        public static string login { get; set; }
     }
 }

@@ -70,7 +70,7 @@
     <Key>
       <PropertyRef Name="TicketID" />
     </Key>
-    <Property Name="TicketID" Type="Int32" Nullable="false" />
+    <Property Name="TicketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FlightID" Type="Int32" Nullable="false" />
     <Property Name="Userlogin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Row" Type="Int32" Nullable="false" />
