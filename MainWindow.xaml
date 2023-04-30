@@ -12,11 +12,11 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Заголовок" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         <Grid Background="LightGray" Panel.ZIndex="-2"></Grid>
         <Grid Grid.Row="2" Background="LightGray"></Grid>
         <Image Source="C:\Users\NikitaPortable\source\repos\Cursed\Cursed\Resources\cube.jpg" HorizontalAlignment="Left" Visibility="Visible"></Image>
         <Frame NavigationUIVisibility="Hidden" ContentRendered="MyFrame_ContentRendered"  Grid.Row="1" x:Name="MyFrame"></Frame>
-        <Button Click="GoBack" x:Name="BackButton" Content="Назад" Width="175" Height="30" HorizontalAlignment="Right" Margin="5"></Button>
+        <Button Click="TicketToFile" x:Name="TicketButton" Content="Распечатать билеты" Width="190" Height="30" Margin="400,22,210,23"> </Button>
+        <Button Click="GoBack" x:Name="BackButton" Visibility="Hidden"  Content="Назад" Width="175" Height="30" HorizontalAlignment="Right" Margin="5"></Button>
     </Grid>
 </Window>

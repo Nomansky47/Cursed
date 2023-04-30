@@ -21,7 +21,7 @@ namespace Cursed
     public partial class PlanePage : Page
     {
         Flights flight=new Flights();
-        private void ButtonsAdd(int j,Panel panel, List<Tickets> flights)
+        private void ButtonsAdd(int j,Panel panel, List<Tickets> tickets)
         {
             int width = 50;
             int height = 50;
@@ -31,7 +31,7 @@ namespace Cursed
             {
                 button[i] = new Button();
                 button[i].Name = "b" + j.ToString() + i.ToString();
-                if (flights.Exists(p => p.FlightID==flight.FlightID&&p.Row == int.Parse(button[i].Name[1].ToString()) && p.Seat == int.Parse(button[i].Name[2].ToString())))
+                if (tickets.Exists(p => p.FlightID==flight.FlightID&&p.Row ==j && p.Seat == i&&p.Userlogin==Navigator.login))
                 {
                     button[i].Background = Brushes.Red;
                 }
@@ -48,12 +48,12 @@ namespace Cursed
             InitializeComponent();
             flight=_selectedFlight;
             DataContext = _selectedFlight;
-            List<Tickets> flights= AirEntities.GetContext().Tickets.ToList();
-            ButtonsAdd(1,Panel1,flights);
-            ButtonsAdd(2, Panel2, flights);
-            ButtonsAdd(3, Panel3, flights);
-            ButtonsAdd(4, Panel4, flights);
-            ButtonsAdd(5, Panel5, flights);
+            List<Tickets> tickets= AirEntities.GetContext().Tickets.ToList();
+            ButtonsAdd(1,Panel1,tickets);
+            ButtonsAdd(2, Panel2, tickets);
+            ButtonsAdd(3, Panel3, tickets);
+            ButtonsAdd(4, Panel4, tickets);
+            ButtonsAdd(5, Panel5, tickets);
         }
         private void ButtonOnClick(object sender, EventArgs eventArgs)
         {
@@ -61,7 +61,19 @@ namespace Cursed
             button.Click -= ButtonOnClick;
             Tickets ticket = new Tickets();
             // if (тип самолета ==бизнес) цена= 300
-            ticket.Price = 1000;
+            Aircrafts aircrafts = AirEntities.GetContext().Aircrafts.FirstOrDefault(p=>p.AircraftID==flight.AircraftID);
+          switch (aircrafts.PlaneType)
+                {
+                case "эконом":
+                    ticket.Price = 2000;
+                    break;
+                case "комфорт":
+                    ticket.Price = 3000;
+                    break;
+                case "бизнес":
+                    ticket.Price = 5000;
+                    break;
+            }
             ticket.FlightID = flight.FlightID;
             ticket.Row = int.Parse(button.Name[1].ToString());
             ticket.Seat = int.Parse(button.Name[2].ToString());

@@ -18,9 +18,9 @@ namespace Cursed
     /// <summary>
     /// Логика взаимодействия для Registration.xaml
     /// </summary>
-    public partial class Registration : Page
+    public partial class Authorization : Page
     {
-        public Registration()
+        public Authorization()
         {
             InitializeComponent();
         }

@@ -32,7 +32,7 @@ namespace Cursed
             if (Visibility == Visibility.Visible)
             {  
                 AirEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                RaceGrid.ItemsSource = AirEntities.GetContext().Flights.ToList(); 
+                RaceGrid.ItemsSource = AirEntities.GetContext().Flights.ToList();
             }
         }
 
