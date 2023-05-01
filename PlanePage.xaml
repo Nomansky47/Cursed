@@ -27,29 +27,38 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Image></Image>
-        <StackPanel x:Name="Panel3" Grid.Column="3">
+        <StackPanel x:Name="Panel1" Grid.Column="2">
         </StackPanel>
-        <StackPanel x:Name="Panel4" Grid.Column="4">
+        <StackPanel x:Name="Panel2" Grid.Column="3">
         </StackPanel>
-        <StackPanel x:Name="Panel5" Grid.Column="5">
+        <StackPanel x:Name="Panel3" Grid.Column="4">
         </StackPanel>
-        <StackPanel x:Name="Panel6" Grid.Column="6">
+        <StackPanel x:Name="Panel4" Grid.Column="5">
         </StackPanel>
-        <StackPanel x:Name="Panel7" Grid.Column="7">
+        <StackPanel x:Name="Panel5" Grid.Column="6">
         </StackPanel>
-        <StackPanel x:Name="Panel8" Grid.Column="8">
+        <StackPanel x:Name="Panel6" Grid.Column="7">
         </StackPanel>
-        <StackPanel x:Name="Panel9" Grid.Column="9" >
+        <StackPanel x:Name="Panel7" Grid.Column="8" >
         </StackPanel>
-        <StackPanel x:Name="Panel10" Grid.Column="10" >
+        <StackPanel x:Name="Panel8" Grid.Column="9" >
         </StackPanel>
-        <StackPanel x:Name="Panel11" Grid.Column="11" >
+        <StackPanel x:Name="Panel9" Grid.Column="10" >
         </StackPanel>
-        <StackPanel x:Name="Panel12" Grid.Column="12">
+        <StackPanel x:Name="Panel10" Grid.Column="11">
         </StackPanel>
-        <StackPanel x:Name="Panel13" Grid.Column="13" >
+        <StackPanel x:Name="Panel11" Grid.Column="12" >
+        </StackPanel>
+        <StackPanel x:Name="Panel12" Grid.Column="13" >
+        </StackPanel>
+        <StackPanel x:Name="Panel13" Grid.Column="14" >
+        </StackPanel>
+        <StackPanel x:Name="Panel14" Grid.Column="15" >
+        </StackPanel>
+        <StackPanel x:Name="Panel15" Grid.Column="16" >
         </StackPanel>
     </Grid>
 </Page>

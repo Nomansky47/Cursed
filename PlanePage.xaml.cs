@@ -9,11 +9,10 @@ namespace Cursed
     {
         Flights _flight=new Flights();
         Aircrafts _aircrafts= new Aircrafts();
-        private void ButtonsAdd(int j,Panel panel, List<Tickets> tickets, int max) //на вход подаются параметры: ряд, панель для добавления на экран,
-                                                                                   //таблица с билетами для проверки, и кол-во рядов в самолете
+        private void ButtonsAdd(int j,Panel panel, List<Tickets> tickets) //на вход подаются параметры: ряд, панель для добавления на экран
+                                                                                   // и таблица с билетами для проверки
         {
-            int width =40 ,height = 40;
-            for (int i = 1; i < max+1; i++)
+            for (int i = 1; i < 7; i++)
             {
                 Button button = new Button();
                 button.Name = "b" + j.ToString() + i.ToString(); //наименование для кнопки, чтобы в будущем определять ряд и номер места
@@ -23,10 +22,9 @@ namespace Cursed
                     button.Background = Brushes.Red; //если в базе данных уже куплен билет, то повторно купить не получится
                 }
                 else button.Click += ButtonOnClick; //иначе можно купить
-                button.Width = width;
-                button.Height = height;
+                button.Width = 40;
+                button.Height = 40;
                 panel.Children.Add(button); // добавление кнопки на панель
-                //ПОЯСНИТЕЛЬНАЯ ЗАПИСКА 
             }
         }
         public PlanePage(Flights _selectedFlight)
@@ -36,17 +34,12 @@ namespace Cursed
             DataContext = _selectedFlight;
             List<Tickets> tickets= AirEntities.GetContext().Tickets.ToList();
             _aircrafts= AirEntities.GetContext().Aircrafts.FirstOrDefault(p => p.AircraftID == _flight.AircraftID);
-            int max = _aircrafts.NumberOfSeats/10;
-            ButtonsAdd(1, Panel3, tickets,max);
-            ButtonsAdd(2, Panel4, tickets, max);
-            ButtonsAdd(3, Panel5, tickets, max);
-            ButtonsAdd(4, Panel6, tickets, max); 
-            ButtonsAdd(5, Panel7, tickets, max);
-            ButtonsAdd(6, Panel8, tickets, max);
-            ButtonsAdd(7, Panel9, tickets, max);
-            ButtonsAdd(8, Panel10, tickets, max);
-            ButtonsAdd(9, Panel11, tickets, max);
-            ButtonsAdd(10, Panel12, tickets, max);
+            Panel[] panels = new Panel[15] {Panel1,Panel2, Panel3, Panel4, Panel5, Panel6, Panel7, Panel8, Panel9,
+            Panel10, Panel11, Panel12, Panel13, Panel14, Panel15};
+            for (int i = 0;i< _aircrafts.NumberOfSeats / 6; i++)
+            {
+                ButtonsAdd(i+1, panels[i], tickets);
+            }
         }
         private void ButtonOnClick(object sender, EventArgs eventArgs)
         {
