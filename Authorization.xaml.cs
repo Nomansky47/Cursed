@@ -18,8 +18,8 @@ namespace Cursed
         }
         private void Enter(object sender, RoutedEventArgs e)
         {
-            if (Login.Text == null || TextPassword.Text == null)
-            { Console.WriteLine("Данные не были введены"); }
+            if (Login.Text == "" || TextPassword.Text == "")
+             Console.WriteLine("Данные не были введены"); 
             else
             {
                 
@@ -51,13 +51,7 @@ namespace Cursed
         }
         private void Register(object sender, RoutedEventArgs e)
         {
-            if (Login.Text==null||TextPassword.Text==null)
-            { Console.WriteLine("Данные не были введены"); }
-            else
-            {
-                Navigator.MainFrame.Navigate(new Register("user"));
-            }
-
+            Navigator.MainFrame.Navigate(new Register());
         }
 
         private void CheckBox_Click(object sender, RoutedEventArgs e)

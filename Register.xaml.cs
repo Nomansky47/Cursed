@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,16 +10,16 @@ namespace Cursed
     {
         private Passengers _currentUser = new Passengers();
         private string usertype;
-        public Register(string userttype)
+        public Register()
         {
-            usertype = userttype;
             InitializeComponent();
         }
 
         private void Registration(object sender, RoutedEventArgs e)
         {
             StringBuilder error = new StringBuilder();
-
+            if (AirEntities.GetContext().Passengers.ToList().Exists(p => p.Userlogin == Login.Text))
+                error.AppendLine("Данный пользователь уже существует, попробуйте поменять логин");
             if (string.IsNullOrEmpty(Nname.ToString()) || string.IsNullOrEmpty(SecondName.ToString())|| string.IsNullOrEmpty(ThirdName.ToString())|| string.IsNullOrEmpty(Password.ToString())|| string.IsNullOrEmpty(Login.ToString()))
                 error.AppendLine("Ошибка ввода, данные не были введены");
             if (error.Length > 0)
@@ -36,7 +37,7 @@ namespace Cursed
                 if (login == "admin")
                     _currentUser.UserType = "admin";
                 else
-                    _currentUser.UserType = usertype;
+                    _currentUser.UserType = "user";
                 var crypt = System.Security.Cryptography.SHA256.Create();
                 var final = crypt.ComputeHash(Encoding.UTF8.GetBytes(Password.Text.ToString()));
                 _currentUser.password = Convert.ToBase64String(final);
