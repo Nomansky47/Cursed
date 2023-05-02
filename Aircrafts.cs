@@ -17,7 +17,6 @@ namespace Cursed
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Aircrafts()
         {
-            this.Aircraft_Cabins = new HashSet<Aircraft_Cabins>();
             this.Flights = new HashSet<Flights>();
         }
     
@@ -25,8 +24,6 @@ namespace Cursed
         public string PlaneType { get; set; }
         public int NumberOfSeats { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Aircraft_Cabins> Aircraft_Cabins { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Flights> Flights { get; set; }
     }

@@ -19,6 +19,7 @@ namespace Cursed
             : base("name=AirEntities")
         {
         }
+
         private static AirEntities _context;
         public static AirEntities GetContext()
         {
@@ -32,7 +33,6 @@ namespace Cursed
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Aircraft_Cabins> Aircraft_Cabins { get; set; }
         public virtual DbSet<Aircrafts> Aircrafts { get; set; }
         public virtual DbSet<Airports> Airports { get; set; }
         public virtual DbSet<Flights> Flights { get; set; }

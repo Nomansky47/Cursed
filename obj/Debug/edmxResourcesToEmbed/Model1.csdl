@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AirModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Aircraft_Cabins">
-    <Key>
-      <PropertyRef Name="AircraftID" />
-      <PropertyRef Name="Row" />
-      <PropertyRef Name="Seat" />
-    </Key>
-    <Property Name="AircraftID" Type="Int32" Nullable="false" />
-    <Property Name="Row" Type="Int32" Nullable="false" />
-    <Property Name="Seat" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Aircrafts" Relationship="Self.FK_Aircraft_Cabins_Aircrafts" FromRole="Aircraft_Cabins" ToRole="Aircrafts" />
-  </EntityType>
   <EntityType Name="Aircrafts">
     <Key>
       <PropertyRef Name="AircraftID" />
@@ -18,7 +7,6 @@
     <Property Name="AircraftID" Type="Int32" Nullable="false" />
     <Property Name="PlaneType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="NumberOfSeats" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Aircraft_Cabins" Relationship="Self.FK_Aircraft_Cabins_Aircrafts" FromRole="Aircrafts" ToRole="Aircraft_Cabins" />
     <NavigationProperty Name="Flights" Relationship="Self.FK_Flights_Aircrafts" FromRole="Aircrafts" ToRole="Flights" />
   </EntityType>
   <EntityType Name="Airports">
@@ -80,18 +68,6 @@
     <NavigationProperty Name="Flights" Relationship="Self.FK_Tickets_Flights" FromRole="Tickets" ToRole="Flights" />
     <NavigationProperty Name="Passengers" Relationship="Self.FK_Tickets_Passengers" FromRole="Tickets" ToRole="Passengers" />
   </EntityType>
-  <Association Name="FK_Aircraft_Cabins_Aircrafts">
-    <End Role="Aircrafts" Type="Self.Aircrafts" Multiplicity="1" />
-    <End Role="Aircraft_Cabins" Type="Self.Aircraft_Cabins" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Aircrafts">
-        <PropertyRef Name="AircraftID" />
-      </Principal>
-      <Dependent Role="Aircraft_Cabins">
-        <PropertyRef Name="AircraftID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Flights_Aircrafts">
     <End Role="Aircrafts" Type="Self.Aircrafts" Multiplicity="1" />
     <End Role="Flights" Type="Self.Flights" Multiplicity="*" />
@@ -141,17 +117,12 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="AirEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Aircraft_Cabins" EntityType="Self.Aircraft_Cabins" />
     <EntitySet Name="Aircrafts" EntityType="Self.Aircrafts" />
     <EntitySet Name="Airports" EntityType="Self.Airports" />
     <EntitySet Name="Flights" EntityType="Self.Flights" />
     <EntitySet Name="Passengers" EntityType="Self.Passengers" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Tickets" EntityType="Self.Tickets" />
-    <AssociationSet Name="FK_Aircraft_Cabins_Aircrafts" Association="Self.FK_Aircraft_Cabins_Aircrafts">
-      <End Role="Aircrafts" EntitySet="Aircrafts" />
-      <End Role="Aircraft_Cabins" EntitySet="Aircraft_Cabins" />
-    </AssociationSet>
     <AssociationSet Name="FK_Flights_Aircrafts" Association="Self.FK_Flights_Aircrafts">
       <End Role="Aircrafts" EntitySet="Aircrafts" />
       <End Role="Flights" EntitySet="Flights" />

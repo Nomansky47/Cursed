@@ -9,11 +9,16 @@
       Title="Registration">
 
     <Grid Background="Gray" >
-        <TextBox  Background="LightGray" HorizontalAlignment="Left" Height="46" Margin="181,158,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Width="328" x:Name="Password"/>
-        <TextBox Background="LightGray" HorizontalAlignment="Left" Height="46" Margin="181,67,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Width="328" x:Name="Login"/>
+        <TextBox Background="LightGray" HorizontalAlignment="Left" Height="46" Margin="181,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" x:Name="Login"/>
         <Button Background="LightGray" Content="Вход" HorizontalAlignment="Left"  Margin="536,118,0,0" VerticalAlignment="Top"  Click="Enter"/>
-        <Button Background="LightGray" Content="Зарегестрироваться" HorizontalAlignment="Left" Margin="334,235,0,0" VerticalAlignment="Top"  Click="Register"/>
+        <Button Background="LightGray" Content="Зарегестрироваться" HorizontalAlignment="Left" Margin="334,251,0,0" VerticalAlignment="Top"  Click="Register"/>
         <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Height="50" Margin="0,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434"><Run Language="ru-ru" Text="Авторизация"/></TextBlock>
-        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Height="50" Margin="181,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" RenderTransformOrigin="0.999,0.576"><Run Language="ru-ru" Text="Нет аккаунта"/><Run Text="?"/></TextBlock>
+       <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Height="50" Margin="181,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" RenderTransformOrigin="0.999,0.576"><Run Language="ru-ru" Text="Нет аккаунта"/><Run Text="?"/></TextBlock>
+        <TextBox Background="LightGray" HorizontalAlignment="Left" Height="46" Margin="181,158,0,0"  VerticalAlignment="Top" Width="328" x:Name="TextPassword" />
+        <PasswordBox Background="LightGray" HorizontalAlignment="Left" Height="46" Margin="181,158,0,0"  VerticalAlignment="Top" Width="328" x:Name="Password" />
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Height="46" Margin="44,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132"><Run Language="ru-ru" Text="Логин"/></TextBlock>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Height="46" Margin="44,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132"><Run Language="ru-ru" Text="Пароль"/></TextBlock>
+        <CheckBox Click="CheckBox_Click" Content="Показать пароль" HorizontalAlignment="Left" Height="16" Margin="389,209,0,0" VerticalAlignment="Top" Width="120"/>
+        
     </Grid>
 </Page>

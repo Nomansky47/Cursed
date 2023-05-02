@@ -24,7 +24,6 @@ namespace Cursed
         public ShowRaces()
         {
             InitializeComponent();
-
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -38,8 +37,6 @@ namespace Cursed
 
         private void Buy(object sender, RoutedEventArgs e)
         {
-           // MessageBox.Show("Не готово");
-           // Navigator.MainFrame.Navigate(new TicketPage((sender as Button).DataContext as Aircrafts));
            Navigator.MainFrame.Navigate(new PlanePage((sender as Button).DataContext as Flights));  
         }
     }

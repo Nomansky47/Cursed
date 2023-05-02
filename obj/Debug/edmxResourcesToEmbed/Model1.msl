@@ -1,15 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище AirModelContainer" CdmEntityContainer="AirEntities">
-    <EntitySetMapping Name="Aircraft_Cabins">
-      <EntityTypeMapping TypeName="AirModel.Aircraft_Cabins">
-        <MappingFragment StoreEntitySet="Aircraft_Cabins">
-          <ScalarProperty Name="AircraftID" ColumnName="AircraftID" />
-          <ScalarProperty Name="Row" ColumnName="Row" />
-          <ScalarProperty Name="Seat" ColumnName="Seat" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Aircrafts">
       <EntityTypeMapping TypeName="AirModel.Aircrafts">
         <MappingFragment StoreEntitySet="Aircrafts">

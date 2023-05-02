@@ -32,7 +32,7 @@ namespace Cursed
             {
                 BackButton.Visibility = Visibility.Hidden;
             }
-            if (MyFrame.Content is Authorization)
+            if (MyFrame.Content is Authorization|| MyFrame.Content is Register)
                 TicketButton.Visibility = Visibility.Hidden;
             else TicketButton.Visibility = Visibility.Visible;
 

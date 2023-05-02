@@ -4,15 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3667b8006355449fa09d02169b08f744" Name="Diagram1">
-        <EntityTypeShape EntityType="AirModel.Aircraft_Cabins" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirModel.Aircrafts" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirModel.Airports" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirModel.Flights" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirModel.Passengers" Width="1.5" PointX="6" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AirModel.Tickets" Width="1.5" PointX="8.25" PointY="3.125" IsExpanded="true" />
-        <AssociationConnector Association="AirModel.FK_Aircraft_Cabins_Aircrafts" ManuallyRouted="false" />
+      <Diagram DiagramId="de35c42750bd4fb1863be69655995e28" Name="Diagram1">
+        <EntityTypeShape EntityType="AirModel.Aircrafts" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirModel.Airports" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirModel.Flights" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirModel.Passengers" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirModel.Tickets" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <AssociationConnector Association="AirModel.FK_Flights_Aircrafts" ManuallyRouted="false" />
         <AssociationConnector Association="AirModel.FK_Flights_Airports" ManuallyRouted="false" />
         <AssociationConnector Association="AirModel.FK_Tickets_Flights" ManuallyRouted="false" />

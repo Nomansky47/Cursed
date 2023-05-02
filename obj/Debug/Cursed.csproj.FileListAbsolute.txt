@@ -114,5 +114,3 @@ C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Cursed.csproj.CoreC
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Cursed.csproj.CopyComplete
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Cursed.exe
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\Cursed.pdb
-C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\TicketPage.g.cs
-C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\TicketPage.baml

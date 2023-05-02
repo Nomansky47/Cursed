@@ -1,23 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Cursed
 {
-    /// <summary>
-    /// Логика взаимодействия для Register.xaml
-    /// </summary>
     public partial class Register : Page
     {
         private Passengers _currentUser = new Passengers();
@@ -41,15 +28,20 @@ namespace Cursed
             }
             try
             {
-                _currentUser.UserType = usertype;
                 _currentUser.Surname= SecondName.Text.ToString();
                 _currentUser.Name = Nname.Text.ToString();
                 _currentUser.Patronymic=ThirdName.Text.ToString();
-                _currentUser.password= Password.Text.ToString();
-                _currentUser.Userlogin=Login.Text.ToString();
+                var login= Login.Text.ToString();
+                _currentUser.Userlogin = login;
+                if (login == "admin")
+                    _currentUser.UserType = "admin";
+                else
+                    _currentUser.UserType = usertype;
+                var crypt = System.Security.Cryptography.SHA256.Create();
+                var final = crypt.ComputeHash(Encoding.UTF8.GetBytes(Password.Text.ToString()));
+                _currentUser.password = Convert.ToBase64String(final);
                 AirEntities.GetContext().Passengers.Add(_currentUser);
                 AirEntities.GetContext().SaveChanges();
-                MessageBox.Show("Успешно");
                 Navigator.MainFrame.GoBack();
             }
             catch (Exception ex)

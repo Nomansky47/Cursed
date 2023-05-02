@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Cursed
 {
@@ -26,11 +18,15 @@ namespace Cursed
         }
         private void Enter(object sender, RoutedEventArgs e)
         {
-            if (Login.Text == null || Password.Text == null)
+            if (Login.Text == null || TextPassword.Text == null)
             { Console.WriteLine("Данные не были введены"); }
             else
             {
-                Passengers user = AirEntities.GetContext().Passengers.FirstOrDefault(p => p.Userlogin == Login.Text && p.password == Password.Text);
+                
+                var crypt = System.Security.Cryptography.SHA256.Create();
+                var notfinal = crypt.ComputeHash(Encoding.UTF8.GetBytes(Password.Password));
+                var final = Convert.ToBase64String(notfinal);
+                Passengers user = AirEntities.GetContext().Passengers.FirstOrDefault(p => p.Userlogin == Login.Text&&p.password==final);
                 if (user == null)
                 {
                     MessageBox.Show("Неправильно введены данные или пользователя не существует");
@@ -38,12 +34,16 @@ namespace Cursed
                 else
                 { 
                 if (user.UserType=="admin")
-                { 
-                    Navigator.MainFrame.Navigate(new ShowCase());
+                {
+                        Password.Password = "";
+                        Login.Text = "";
+                        Navigator.MainFrame.Navigate(new ShowCase());
                 }
                 if(user.UserType=="user")
                 {
                     Navigator.login=Login.Text;
+                        Password.Password = "";
+                        Login.Text = "";
                     Navigator.MainFrame.Navigate(new ShowRaces());
                 }
                 }
@@ -51,13 +51,29 @@ namespace Cursed
         }
         private void Register(object sender, RoutedEventArgs e)
         {
-            if (Login.Text==null||Password.Text==null)
+            if (Login.Text==null||TextPassword.Text==null)
             { Console.WriteLine("Данные не были введены"); }
             else
             {
                 Navigator.MainFrame.Navigate(new Register("user"));
             }
 
+        }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            CheckBox checkBox = sender as CheckBox;
+            if (checkBox.IsChecked == true)
+            {
+                Password.Visibility = Visibility.Hidden;
+                TextPassword.Text = Password.Password;
+                TextPassword.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                TextPassword.Visibility = Visibility.Hidden;
+                Password.Visibility = Visibility.Visible;
+            }
         }
     }
 }
