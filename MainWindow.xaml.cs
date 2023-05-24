@@ -32,7 +32,7 @@ namespace Cursed
             {
                 BackButton.Visibility = Visibility.Hidden;
             }
-            if (MyFrame.Content is Authorization|| MyFrame.Content is Register)
+            if (!(MyFrame.Content is ShowRaces)||!(MyFrame.Content is AdminPlanes))
                 TicketButton.Visibility = Visibility.Hidden;
             else TicketButton.Visibility = Visibility.Visible;
 
@@ -55,7 +55,7 @@ namespace Cursed
                     all.AppendLine("Время прибытия: " + ticket.Departure_Time.ToString());
                     all.AppendLine();
                 }
-                using (FileStream stream = new FileStream("C:\\Users\\NikitaPortable\\Desktop\\Ticket.txt", FileMode.OpenOrCreate))
+                using (FileStream stream = new FileStream("C:\\Users\\NikitaPortable\\Desktop\\Ticket.txt", FileMode.Create))
                 {
                     byte[] buffer = Encoding.Default.GetBytes(all.ToString());
                     stream.Write(buffer, 0, buffer.Length);

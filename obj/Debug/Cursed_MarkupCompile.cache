@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\App.xaml
-7659464241
+121734448608
 2-1957146511
-21-2145909027
+26-1111168962
 58-759334801
-EditPage.xaml;MainWindow.xaml;Register.xaml;Authorization.xaml;ShowCase.xaml;ShowRaces.xaml;PlanePage.xaml;
+AdminAirports.xaml;AdminPage.xaml;AdminPassengers.xaml;EditAirports.xaml;EditPassengers.xaml;EditPlanes.xaml;MainWindow.xaml;Register.xaml;Authorization.xaml;AdminPlanes.xaml;ShowRaces.xaml;PlanePage.xaml;
 
 False
 

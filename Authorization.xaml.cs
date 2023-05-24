@@ -18,11 +18,10 @@ namespace Cursed
         }
         private void Enter(object sender, RoutedEventArgs e)
         {
-            if (Login.Text == "" || TextPassword.Text == "")
-             Console.WriteLine("Данные не были введены"); 
+            if (Login.Text == "" || Password.Password == "")
+             MessageBox.Show("Данные не были введены"); 
             else
             {
-                
                 var crypt = System.Security.Cryptography.SHA256.Create();
                 var notfinal = crypt.ComputeHash(Encoding.UTF8.GetBytes(Password.Password));
                 var final = Convert.ToBase64String(notfinal);
@@ -37,7 +36,7 @@ namespace Cursed
                 {
                         Password.Password = "";
                         Login.Text = "";
-                        Navigator.MainFrame.Navigate(new ShowCase());
+                        Navigator.MainFrame.Navigate(new AdminPage());
                 }
                 if(user.UserType=="user")
                 {

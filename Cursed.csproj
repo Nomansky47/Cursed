@@ -179,14 +179,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminAirports.xaml.cs">
+      <DependentUpon>AdminAirports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPassengers.xaml.cs">
+      <DependentUpon>AdminPassengers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Aircrafts.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Airports.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="EditPage.xaml.cs">
-      <DependentUpon>EditPage.xaml</DependentUpon>
+    <Compile Include="EditAirports.xaml.cs">
+      <DependentUpon>EditAirports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPassengers.xaml.cs">
+      <DependentUpon>EditPassengers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPlanes.xaml.cs">
+      <DependentUpon>EditPlanes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Flights.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -216,8 +231,8 @@
     <Compile Include="Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ShowCase.xaml.cs">
-      <DependentUpon>ShowCase.xaml</DependentUpon>
+    <Compile Include="AdminPlanes.xaml.cs">
+      <DependentUpon>AdminPlanes.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShowRaces.xaml.cs">
       <DependentUpon>ShowRaces.xaml</DependentUpon>
@@ -231,7 +246,27 @@
     <Compile Include="Tickets.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Page Include="EditPage.xaml">
+    <Page Include="AdminAirports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminPassengers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditAirports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPassengers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPlanes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -255,7 +290,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ShowCase.xaml">
+    <Page Include="AdminPlanes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

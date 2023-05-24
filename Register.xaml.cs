@@ -9,7 +9,6 @@ namespace Cursed
     public partial class Register : Page
     {
         private Passengers _currentUser = new Passengers();
-        private string usertype;
         public Register()
         {
             InitializeComponent();
@@ -20,7 +19,7 @@ namespace Cursed
             StringBuilder error = new StringBuilder();
             if (AirEntities.GetContext().Passengers.ToList().Exists(p => p.Userlogin == Login.Text))
                 error.AppendLine("Данный пользователь уже существует, попробуйте поменять логин");
-            if (string.IsNullOrEmpty(Nname.ToString()) || string.IsNullOrEmpty(SecondName.ToString())|| string.IsNullOrEmpty(ThirdName.ToString())|| string.IsNullOrEmpty(Password.ToString())|| string.IsNullOrEmpty(Login.ToString()))
+            if (string.IsNullOrEmpty(Nname.Text) || string.IsNullOrEmpty(SecondName.Text)|| string.IsNullOrEmpty(ThirdName.Text)|| string.IsNullOrEmpty(Password.Text)|| string.IsNullOrEmpty(Login.Text))
                 error.AppendLine("Ошибка ввода, данные не были введены");
             if (error.Length > 0)
             {
