@@ -55,10 +55,7 @@ namespace Cursed
             {
                 MessageBox.Show(ex.Message.ToString() + " " + ex.GetType() + " " + ex.StackTrace);
             }
-
-
         }
 
-      
     }
 }

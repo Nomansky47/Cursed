@@ -20,9 +20,43 @@ namespace Cursed
     /// </summary>
     public partial class EditRaces : Page
     {
-        public EditRaces()
+        private Flights _currentFlight = new Flights();
+        bool _EditOrNot;
+        public EditRaces(Flights selectedFlight, bool EditOrNot)
         {
             InitializeComponent();
+            _EditOrNot = EditOrNot;
+            if (selectedFlight != null)
+            {
+                _currentFlight = selectedFlight;
+            }
+            DataContext = _currentFlight;
+        }
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            StringBuilder error = new StringBuilder();
+            if (string.IsNullOrEmpty(Date.Text) || string.IsNullOrEmpty(AirportID.Text) || string.IsNullOrEmpty(AircraftID.Text) || string.IsNullOrEmpty(Destination.Text) || string.IsNullOrEmpty(Departure_Time.Text) || string.IsNullOrEmpty(Arrival_Time.Text))
+                error.AppendLine("Ошибка ввода, данные не были введены");
+            if (error.Length > 0)
+            {
+                MessageBox.Show(error.ToString());
+                return;
+            }
+            try
+            {
+                if (_EditOrNot)
+                    AirEntities.GetContext().Flights.Add(_currentFlight);
+                AirEntities.GetContext().SaveChanges();
+                MessageBox.Show("Успешно");
+                Navigator.MainFrame.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString() + " " + ex.GetType() + " " + ex.StackTrace);
+            }
+
+
         }
     }
 }
