@@ -15,29 +15,28 @@ using System.Windows.Shapes;
 
 namespace Cursed
 {
-    public partial class EditPassengers : Page
+    public partial class EditTickets : Page
     {
-        private Passengers _currentPassenger = new Passengers();
+        private Tickets _currentTicket = new Tickets();
         bool _EditOrNot;
-        public EditPassengers(Passengers selectedPassenger, bool EditOrNot)
+        public EditTickets(Tickets selectedTicket, bool EditOrNot)
         {
             InitializeComponent();
             _EditOrNot = EditOrNot;
-            if (selectedPassenger != null)
+            if (selectedTicket != null)
             {
-                Login.IsEnabled = false;
-                _currentPassenger = selectedPassenger;
+                _currentTicket = selectedTicket;
             }
-            DataContext = _currentPassenger;
+            DataContext = _currentTicket;
         }
 
         private void Save(object sender, RoutedEventArgs e)
         {
             StringBuilder error = new StringBuilder();
-            if (string.IsNullOrEmpty(Login.Text) ||string.IsNullOrEmpty(UserType.Text)|| string.IsNullOrEmpty(Surname.Text)|| string.IsNullOrEmpty(Name.Text)|| string.IsNullOrEmpty(Patronymic.Text))
+            if (string.IsNullOrEmpty(FlightID.Text) || string.IsNullOrEmpty(Userlogin.Text) || string.IsNullOrEmpty(Row.Text) || string.IsNullOrEmpty(Seat.Text) || string.IsNullOrEmpty(Price.Text)|| string.IsNullOrEmpty(DepartureTime.Text))
                 error.AppendLine("Ошибка ввода, данные не были введены");
-            else if (UserType.Text!="admin"|| UserType.Text != "user")
-                error.AppendLine("Тип пользователя должен быть admin или user");
+            else if (!int.TryParse(FlightID.Text, out int n) ||!int.TryParse(Row.Text, out n)||!int.TryParse(Seat.Text, out n)|| !int.TryParse(Price.Text, out n))
+                error.AppendLine("Ошибка ввода данных");
             if (error.Length > 0)
             {
                 MessageBox.Show(error.ToString());
@@ -46,7 +45,7 @@ namespace Cursed
             try
             {
                 if (_EditOrNot)
-                    AirEntities.GetContext().Passengers.Add(_currentPassenger);
+                    AirEntities.GetContext().Tickets.Add(_currentTicket);
                 AirEntities.GetContext().SaveChanges();
                 MessageBox.Show("Успешно");
                 Navigator.MainFrame.GoBack();
@@ -58,5 +57,6 @@ namespace Cursed
 
 
         }
+
     }
 }

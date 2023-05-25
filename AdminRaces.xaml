@@ -1,0 +1,31 @@
+﻿<Page x:Class="Cursed.AdminRaces"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cursed"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminRaces" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <DataGrid x:Name="MyGrid" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер аэропорта" Binding="{Binding AirportID}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер самолета" Binding="{Binding AircraftID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пункт назначения" Binding="{Binding Destination}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Время вылета" Binding="{Binding Departure_Time}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Время прилета" Binding="{Binding Arrival_Time}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Click="Buy" Content="Купить билет" Margin="5" Width="90" Height="30" VerticalAlignment="Center" Background="Aqua">
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

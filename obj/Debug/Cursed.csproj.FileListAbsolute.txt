@@ -124,3 +124,7 @@ C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\AdminPassengers.g.c
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\EditPassengers.g.cs
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\AdminPassengers.baml
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\EditPassengers.baml
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\AdminTickets.g.cs
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\EditTickets.g.cs
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\AdminTickets.baml
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\EditTickets.baml

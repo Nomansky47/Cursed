@@ -12,5 +12,7 @@
         <Button Content="Самолеты" HorizontalAlignment="Left" Height="61" Margin="29,61,0,0" VerticalAlignment="Top" Width="139" Click="PlanesShow"/>
         <Button Content="Аэропорты" HorizontalAlignment="Left" Height="61" Margin="194,61,0,0" VerticalAlignment="Top" Width="139" Click="AirportsShow"/>
         <Button Content="Пассажиры" HorizontalAlignment="Left" Height="61" Margin="358,61,0,0" VerticalAlignment="Top" Width="139" Click="PassengersShow"/>
+        <Button Content="Билеты" HorizontalAlignment="Left" Height="61" Margin="29,145,0,0" VerticalAlignment="Top" Width="139" Click="TicketsShow"/>
+        <Button Content="Рейсы" HorizontalAlignment="Left" Height="61" Margin="194,145,0,0" VerticalAlignment="Top" Width="139" Click="RacesShow"/>
     </Grid>
 </Page>

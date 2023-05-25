@@ -7,7 +7,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EditPassengers">
-
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -20,20 +19,17 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Логин" Grid.Row="0"></TextBlock>
-        <TextBlock Text="Пароль" Grid.Row="1"></TextBlock>
-        <TextBlock Text="Тип пользователя" Grid.Row="2"/>
-        <TextBlock Text="Фамилия" Grid.Row="3"/>
-        <TextBlock Text="Имя" Grid.Row="4"/>
-        <TextBlock Text="Отчество" Grid.Row="5"/>
-        <TextBox x:Name="Login" Text="{Binding Userlogin}" Width="500" Height="50" Grid.Column="1" MaxLength="10"></TextBox>
-        <TextBox x:Name="Password" Text="{Binding password}" Width="500" Height="50" Grid.Column="1" Grid.Row="1" MaxLength="30"></TextBox>
-        <TextBox x:Name="UserType" Text="{Binding UserType}" Width="500" Height="50" Grid.Column="1" Grid.Row="2" MaxLength="30"></TextBox>
-        <TextBox x:Name="Surname" Text="{Binding Surname}" Width="500" Height="50" Grid.Column="1" Grid.Row="3" MaxLength="30"></TextBox>
-        <TextBox x:Name="Name" Text="{Binding Name}" Width="500" Height="50" Grid.Column="1" Grid.Row="4" MaxLength="30"></TextBox>
-        <TextBox x:Name="Patronymic" Text="{Binding Patronymic}" Width="500" Height="50" Grid.Column="1" Grid.Row="5" MaxLength="30"></TextBox>
-        <Button Click="Save" Content="Сохранить" Grid.ColumnSpan="2" Grid.Row="6" Height="50" Width="120"></Button>
+        <TextBlock Text="Тип пользователя" Grid.Row="1"/>
+        <TextBlock Text="Фамилия" Grid.Row="2"/>
+        <TextBlock Text="Имя" Grid.Row="3"/>
+        <TextBlock Text="Отчество" Grid.Row="4"/>
+        <TextBox x:Name="Login" Text="{Binding Userlogin}" Width="500" Height="50" Grid.Column="1" MaxLength="30"></TextBox>
+        <TextBox x:Name="UserType" Text="{Binding UserType}" Width="500" Height="50" Grid.Column="1" Grid.Row="1" MaxLength="20"></TextBox>
+        <TextBox x:Name="Surname" Text="{Binding Surname}" Width="500" Height="50" Grid.Column="1" Grid.Row="2" MaxLength="30"></TextBox>
+        <TextBox x:Name="Name" Text="{Binding Name}" Width="500" Height="50" Grid.Column="1" Grid.Row="3" MaxLength="30"></TextBox>
+        <TextBox x:Name="Patronymic" Text="{Binding Patronymic}" Width="500" Height="50" Grid.Column="1" Grid.Row="4" MaxLength="30"></TextBox>
+        <Button Click="Save" Content="Сохранить" Grid.ColumnSpan="2" Grid.Row="5" Height="50" Width="120"></Button>
     </Grid>
 </Page>

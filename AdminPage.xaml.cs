@@ -38,5 +38,10 @@ namespace Cursed
         {
             Navigator.MainFrame.Navigate(new AdminPassengers());
         }
+
+        private void TicketsShow(object sender, RoutedEventArgs e)
+        {
+            Navigator.MainFrame.Navigate(new AdminTickets());
+        }
     }
 }
