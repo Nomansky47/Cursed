@@ -50,7 +50,7 @@ namespace Cursed
                 }
             }
         }
-
+     
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (Visibility == Visibility.Visible)

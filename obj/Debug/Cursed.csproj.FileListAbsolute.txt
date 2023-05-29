@@ -130,3 +130,5 @@ C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\AdminTickets.baml
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\EditTickets.baml
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\AdminRaces.g.cs
 C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\EditRaces.g.cs
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\AdminRaces.baml
+C:\Users\NikitaPortable\source\repos\Cursed\Cursed\obj\Debug\EditRaces.baml
