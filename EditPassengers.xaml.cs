@@ -36,7 +36,7 @@ namespace Cursed
             StringBuilder error = new StringBuilder();
             if (string.IsNullOrEmpty(Login.Text) ||string.IsNullOrEmpty(UserType.Text)|| string.IsNullOrEmpty(Surname.Text)|| string.IsNullOrEmpty(Name.Text)|| string.IsNullOrEmpty(Patronymic.Text))
                 error.AppendLine("Ошибка ввода, данные не были введены");
-            else if (UserType.Text!="admin"|| UserType.Text != "user")
+            else if (!(UserType.Text=="admin"|| UserType.Text == "user"))
                 error.AppendLine("Тип пользователя должен быть admin или user");
             if (error.Length > 0)
             {
