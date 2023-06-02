@@ -32,36 +32,38 @@ namespace Cursed
             {
                 BackButton.Visibility = Visibility.Hidden;
             }
-            if (!(MyFrame.Content is ShowRaces)||!(MyFrame.Content is AdminPlanes))
-                TicketButton.Visibility = Visibility.Hidden;
-            else TicketButton.Visibility = Visibility.Visible;
-
+            if (MyFrame.Content is ShowRaces || MyFrame.Content is PlanePage) TicketButton.Visibility = Visibility.Visible;
+            else TicketButton.Visibility = Visibility.Hidden;
         }
 
         private void TicketToFile(object sender, RoutedEventArgs e)
         {
-            if (AirEntities.GetContext().Tickets.ToList().Exists(p => p.Userlogin == Navigator.login))
-            {
-               List<Tickets> tickets= AirEntities.GetContext().Tickets.Where(p=>p.Userlogin == Navigator.login).ToList();
-                StringBuilder all=new StringBuilder();
-                foreach (var ticket in tickets)
+            
+                if (AirEntities.GetContext().Tickets.ToList().Exists(p => p.Userlogin == Navigator.login))
                 {
-                    all.AppendLine("Номер билета: "+ticket.TicketID.ToString());
-                    all.AppendLine("Номер рейса: " + ticket.FlightID.ToString());
-                    all.AppendLine("Логин: " + ticket.Userlogin);
-                    all.AppendLine("Ряд: " + ticket.Row.ToString());
-                    all.AppendLine("Место: " + ticket.Seat.ToString());
-                    all.AppendLine("Цена: " + ticket.Price.ToString()+'р');
-                    all.AppendLine("Время прибытия: " + ticket.Departure_Time.ToString());
-                    all.AppendLine();
+                    List<Tickets> tickets = AirEntities.GetContext().Tickets.Where(p => p.Userlogin == Navigator.login).ToList();
+                    StringBuilder all = new StringBuilder();
+                    foreach (var ticket in tickets)
+                    {
+                        all.AppendLine("Номер билета: " + ticket.TicketID.ToString());
+                        all.AppendLine("Номер рейса: " + ticket.FlightID.ToString());
+                        all.AppendLine("Логин: " + ticket.Userlogin);
+                        all.AppendLine("Фамилия: " + AirEntities.GetContext().Passengers.Where(p => p.Userlogin == ticket.Userlogin).FirstOrDefault().Surname);
+                        all.AppendLine("Имя: " + AirEntities.GetContext().Passengers.Where(p => p.Userlogin == ticket.Userlogin).FirstOrDefault().Name);
+                        all.AppendLine("Отчество: " + AirEntities.GetContext().Passengers.Where(p => p.Userlogin == ticket.Userlogin).FirstOrDefault().Patronymic);
+                        all.AppendLine("Ряд: " + ticket.Row.ToString());
+                        all.AppendLine("Место: " + ticket.Seat.ToString());
+                        all.AppendLine("Цена: " + ticket.Price.ToString() + 'р');
+                        all.AppendLine("Время прибытия: " + ticket.Departure_Time.ToString());
+                        all.AppendLine();
+                    }
+                    using (FileStream stream = new FileStream("C:\\Users\\NikitaPortable\\Desktop\\Ticket.txt", FileMode.Create))
+                    {
+                        byte[] buffer = Encoding.Default.GetBytes(all.ToString());
+                        stream.Write(buffer, 0, buffer.Length);
+                    }
                 }
-                using (FileStream stream = new FileStream("C:\\Users\\NikitaPortable\\Desktop\\Ticket.txt", FileMode.Create))
-                {
-                    byte[] buffer = Encoding.Default.GetBytes(all.ToString());
-                    stream.Write(buffer, 0, buffer.Length);
-                }
-            }
-            else MessageBox.Show("Билеты отсутсвуют");
+                else MessageBox.Show("Билеты отсутсвуют");
         }
     }
 }
